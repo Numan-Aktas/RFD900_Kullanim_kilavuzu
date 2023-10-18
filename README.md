@@ -55,7 +55,7 @@ Multipoint bağlantısı, bir merkezi cihazın (MAİN) birden çok uzak düğüm
 
 Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. MultiPoint olarak ayarlamak için cihazınızla uyumlu RFD X Multipoint SİK başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
 ### uygulama indirme linki  https://files.rfdesign.com.au/tools/
-### P2P HARDWARE indirme linki https://files.rfdesign.com.au/firmware/
+### Mulltipoint yazılımı indirme linki https://files.rfdesign.com.au/firmware/
 
 ![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/mp.png)
 
