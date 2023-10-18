@@ -38,7 +38,7 @@ Point-to-Point bağlantı, iki cihazın (örneğin, iki RFD 900x modülü) doğr
 
 Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. P2P olarak ayarlamak için cihazınızla uyumlu RFD X hardware başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
 ### uygulama indirme linki  https://files.rfdesign.com.au/tools/
-### P2P HARDWARE indirme linki https://files.rfdesign.com.au/firmware/
+### P2P FİRMWARE indirme linki https://files.rfdesign.com.au/firmware/
 
 ![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_param.png)
 
