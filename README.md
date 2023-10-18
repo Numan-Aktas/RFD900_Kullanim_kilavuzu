@@ -24,12 +24,12 @@ RFD 900x modülünü bilgisayarınıza bağlamak için modülün seri port (UART
 ![rd900x_kablo](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/ba%C4%9Flant%C4%B1.png)
 
 Başka sistemler ile bağlantı yapmak için aşağıdaki resimdeki pinout yapısını kullanabilrsiniz.
-#### Not : TX-RX eşlecek şekilde kablolama yapınız.
+#### Not : TX-RX eşleşecek şekilde kablolama yapınız.
 ![rd900x_pinout](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/pinout.png)
 
 ### !!ÖNEMLİ NOT!! : ANTENLERİ TAKMADAN ENERJİ VERMEYİNİZ
 
-RFD 900x, genellikle 4V-5,5V DC (Volt doğru akım) ve 0,5A-1A (Amper) ile beslenir. Bu, modülün doğru bir şekilde çalışabilmesi için gereken nominal geril ve akımdır. Bu gerilim ve akım değeri dışındaki besleme gerilimleri modülün performansını olumsuz etkileyebilir veya zarar verebilir. Ayrıca Antenler takılmadan enerji verilirse cihaz ısınarak hasar alma ihtimali yüksektir.
+RFD 900x, genellikle 4V-5,5V DC (Volt doğru akım) ve 0,5A-1A (Amper) ile beslenir. Bu, modülün doğru bir şekilde çalışabilmesi için gereken nominal gerilim ve akımdır. Bu gerilim ve akım değeri dışındaki besleme gerilimleri modülün performansını olumsuz etkileyebilir veya zarar verebilir. Ayrıca Antenler takılmadan enerji verilirse cihaz ısınarak hasar alma ihtimali yüksektir.
 
 # Point-to-Point
 ![p2p](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_connect.png)
