@@ -33,16 +33,35 @@ RFD 900x, genellikle 4V-5,5V DC (Volt doğru akım) ve 0,5A-1A (Amper) ile besle
 
 # Point-to-Point
 ![p2p](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_connect.png)
+
 Point-to-Point bağlantı, iki cihazın (örneğin, iki RFD 900x modülü) doğrudan ve özel bir iletişim bağlantısı kurduğu bir kablosuz iletişim türüdür. Bu bağlantı türü, iki nokta arasında veri aktarımı gerektiren birçok uygulamada kullanılır.
 
-Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir
+Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. P2P olarak ayarlamak için cihazınızla uyumlu RFD X hardware başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
 ### uygulama indirme linki  https://files.rfdesign.com.au/tools/
+### P2P HARDWARE indirme linki https://files.rfdesign.com.au/firmware/
 
 ![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_param.png)
+
 RFD900 cihazını point to point kullanmak için RFDTools uygulmasını açıp doğru com portunu[1] ve baudrate[2] girdikten sonra connect butonuna[3] tıklayın. ardından upload firmware butonuna[4] tıklayarak yazılımı yükleyin. firmware yüklenince yeniden başlatıp bağlandıktan sonra load settings butonuna[5] basarak parametreleri çağırın. Cihazların biribiri ile iletişim kurması için bağlanacak cihazların NET ID[6] aynı olmak zorundadır. Anten modu[7] 1:TX 2:RX olacak şekilde ayarlanmalıdır. Ayrıca sisteminizin deseklediği en yüksek Baudrate[8] hızını ayarlayarak veri iletim hızı arttıralabir. Bağlantı kalitesini arttırmak için ise TX power[9] parametresini en yüksek değere ayarlayabilirsiniz. Tüm parametreleri ayarladıktan sonra save settings[10] butonuna basarak parametreleri kaydededbilirsiniz. iki cihazada aynı işlemleri uyguladıktan sonra iki cihazada güç verildiğinde cihazın yeşil ledi sabit ve kırmızı ledi hızlı yanıp sönmeye yanmaya başlayacaktır, bu durum cihazların bağlandığını ve veri iletimi gerçekleştirdiğini belirtmektedir.
 
 ### ekstra ayarlar
 max windows(ms) kaç milisaniye bir veri iletimi olacağını belirtir.değer azaltılması durumunda daha sık veri iletimi gerçekleşir. mavlink parametersi ardupilot veya px4 vb yazılımların iletişm protokülüdür. Bu tip otopilotlardan veri alabilmek için parametre açık(ON) olarak ayarlanmalıdır. AES ENCRYPTİON(GELİŞMİŞ ŞİFRELEME) cihazların yayınladığı mesajlara 126 veya 256 karakterli bir şifre uygulayarak şifreleme yapar. AES Key sahip olmayan cihazlar mesajı çözemez ve bağlantı kuramaz. Cihazaların daha güvenli çalışabilmesi için bu parametre ayarlanabilir. Bu ayarları yaparken iki cihaz birbirine bağlıysa copy required to remote butonuna basarsanız iki cihazında tüm parametrelerini aynı yapar ve değişikleri iki cihaz içinde yapmanıza gerek kalmaz.
 
 # Multipoint Bağlantısı
+
 ![MP](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/multipoint_connection.png)
+
+Multipoint bağlantısı, bir merkezi cihazın (MAİN) birden çok uzak düğümlerle (NODE) kablosuz iletişim kurduğu bir iletişim türüdür. Bu, birçok uygulamada kullanılan yaygın bir kablosuz iletişim konseptidir ve RFD 900x gibi cihazlarla uygulanabilir. Multipoint bağlantısının merkezi noktası, genellikle bir baz istasyonu olarak adlandırılır. Baz istasyonu cihazı, birden çok uzak cihazla iletişim kurmak ve onları kontrol etmek için kullanılır.
+
+Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. MultiPoint olarak ayarlamak için cihazınızla uyumlu RFD X Multipoint SİK başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
+### uygulama indirme linki  https://files.rfdesign.com.au/tools/
+### P2P HARDWARE indirme linki https://files.rfdesign.com.au/firmware/
+
+![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/mp.png)
+
+RFD900 cihazını point to point kullanmak için RFDTools uygulmasını açıp doğru com portunu[1] ve baudrate[2] girdikten sonra connect butonuna[3] tıklayın. ardından upload firmware butonuna[4] tıklayarak yazılımı yükleyin. firmware yüklenince yeniden başlatıp bağlandıktan sonra load settings butonuna[5] basarak parametreleri çağırın. Cihazların biribiri ile iletişim kurması için bağlanacak cihazların NET ID[6] aynı olmak zorundadır. Anten modu[7] 1:TX 2:RX olacak şekilde ayarlanmalıdır. Ayrıca sisteminizin deseklediği en yüksek Baudrate[8] hızını ayarlayarak veri iletim hızı arttıralabir. Bağlantı kalitesini arttırmak için ise TX power[9] parametresini en yüksek değere ayarlayabilirsiniz. Her cihaza bir Düğüm numarası(NODE ID)[11] verilmelidir. Ana düğüme 1 değerini vermek zorunludur. diğer düğümlerin numaraları rastgele verilebilir. HEDEF KİMLİK(DEST ID)[12] cihazın hangi düğümlere veri ileteceğini ve alacağını belirtir. Ana düğümün tüm düğümlere bağlanabilmesi için 255 değeri ayarlanmalıdır. Özel bir düğüme bağlanmak için ise bağlanılacak düğümün numarası verilebilir. Diğer düğümler ise Ana düğüme bağlanabilmesi için 1 olarak ayarlanmalıdır. AĞ Sayısı(NET COUNT)[13] bir sistemdeki Ana Düğüm sayısını belirtir. Bu değer sistemde 1 istasyon varsa 1 olarak ayarlanmalıdır. Cihazların ne tür parametre gönderdiğine bağlı olarak RX Frame[14] ayarlanmalıdır. Tüm parametreleri ayarladıktan sonra save settings[10] butonuna basarak parametreleri kaydededbilirsiniz. Sistemin Çalışması için Ana düğüm için terminal kısmından ekstra parametreler ayarlanmalıdır. 
+
+![rfd_term](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/terminal_code.png)
+terminalde işlem yapılıp yapılamadığını kontrol etmek için +++ yazılır ve terminal +++ döndürmesi gerekir. AT&M0= 0, x kodu yazılır x yerine sistemdeki düğüm sayısının bir fazlası yazılır. işlemi yazdırmak için AT&W komutu çalıştırılır ve OK yazması beklenir. ATZ komutu ilede reboot atıp işlem tamamlanır. herhangi bir adım sırasında terminal yanıt döndürmezse kodu tekrar gönderin. Cihazalara güç verildiğinde cihazların yeşil ledi sabit ve kırmızı ledi hızlı yanıp sönmeye yanmaya başlayacaktır, bu durum cihazların bağlandığını ve veri iletimi gerçekleştirdiğini belirtmektedir.
+
+#### daha fazlası için https://files.rfdesign.com.au adresini ziyaret edebilirsiniz.
