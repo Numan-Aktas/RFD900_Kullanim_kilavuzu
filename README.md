@@ -1,67 +1,103 @@
-# RFD900_Kullanim_kilavuzu
-RFD900 ile point to point ve multi-point ağ kurma 
-## RFD 900 Mödülü Nedir?
-![rd900x](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/rfd900x.jpg)
-RFD 900x, yüksek veri iletim hızları ve uzun menzil özelliklerine sahip kablosuz bir iletişim modülüdür. Bu modül, özellikle uzaktaki cihazlar arasında veri iletimi için tasarlanmıştır. RFD 900x, genellikle insansız hava araçları (İHA), robotlar, uzaktan algılama sistemleri, endüstriyel otomasyon, tarım uygulamaları ve diğer uzun mesafe kablosuz iletişim gereksinimlerini karşılamak için kullanılır.
+# RFD900 Kullanım Kılavuzu
 
-RFD 900x'in Temel Özellikleri:
+RFD900 ile point-to-point ve multi-point ağ kurma işlemlerini açıklayan bu kılavuz, RFD900X modülünün nasıl kullanılacağına dair adım adım talimatlar sunmaktadır.
 
-*Yüksek Veri İletim Hızları: RFD 900x, yüksek hızlarda veri iletimine izin verir(max 264 kbps), bu da büyük veri paketlerini hızlı bir şekilde aktarabilir.
+## RFD 900 Modülü Nedir?
 
-*Uzun Menzil: Bu modül, geniş bir iletişim menziline sahiptir(max 40 km), bu da cihazların uzak noktalar arasında güvenilir iletişim kurmasını sağlar.
+![rfd900x](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/rfd900x.jpg)
 
-*Zayıf Sinyal Performansı: Zayıf sinyal koşullarında bile güvenilir bir bağlantı sunar, bu da zorlu çevresel koşullar altında kullanım için uygundur.
+RFD900X, yüksek veri iletim hızları ve uzun menzil özelliklerine sahip kablosuz bir iletişim modülüdür. Genellikle insansız hava araçları (İHA), robotlar, uzaktan algılama sistemleri ve endüstriyel otomasyon gibi uzun mesafe kablosuz iletişim gereksinimlerini karşılamak için kullanılır.
 
-*Çeşitli Uygulamalar: RFD 900x, çeşitli uygulamalarda kullanılabilen çok yönlü bir iletişim çözümüdür. Tarım, endüstriyel otomasyon, uzaktan algılama ve daha birçok alanda kullanılabilir.
+### RFD900X'in Temel Özellikleri:
+- **Yüksek Veri İletim Hızları**: RFD900X, maksimum 264 kbps hızında veri iletebilir.
+- **Uzun Menzil**: 40 km'ye kadar güvenilir iletişim sağlar.
+- **Zayıf Sinyal Performansı**: Zayıf sinyal koşullarında bile güvenilir bir bağlantı sunar.
+- **Çeşitli Uygulamalar**: Tarım, endüstriyel otomasyon ve uzaktan algılama gibi birçok alanda kullanılabilir.
+- **Kolay Entegrasyon**: Farklı sistem ve cihazlara entegrasyonu kolaydır.
 
-*Kolay Entegrasyon: RFD 900x, çeşitli cihazlara ve sistemlere entegre edilmesi kolaydır ve kullanıcıların hızlı bir şekilde çalışmaya başlamasını sağlar.
+---
 
-## Bağlantı şeması ve Besleme
-RFD 900x modülünün bir bilgisayar veya diğer cihazlarla bağlantı kurma işlemi, tipik olarak seri iletişim (UART) veya diğer uygun arayüzler aracılığıyla gerçekleştirilir. Aşağıda, bir bilgisayar ve Pixhawk (insansız hava aracı denetim ünitesi) gibi cihazlarla RFD 900x'in bağlantı kurma sürecini adım adım açıklayacağım.
+## Bağlantı Şeması ve Besleme
+
+RFD900X modülünün bir bilgisayar veya başka cihazlarla bağlantısı seri iletişim (UART) kullanılarak yapılır. Aşağıda bilgisayar ve Pixhawk gibi cihazlarla bağlantı şeması gösterilmektedir:
+
 ![rd900x_bağlanti](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/RFD900x_FTDI_SM.jpg)
 
-RFD 900x modülünü bilgisayarınıza bağlamak için modülün seri port (UART) çıkışını bir USB-UART dönüştürücüsüne veya uygun bir ftdi bağlantı kablosuna takın.
+Modül, seri port çıkışı (UART) üzerinden bir USB-UART dönüştürücüsüne bağlanarak bilgisayara entegre edilir.
+
 ![rd900x_kablo](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/ba%C4%9Flant%C4%B1.png)
 
-Başka sistemler ile bağlantı yapmak için aşağıdaki resimdeki pinout yapısını kullanabilrsiniz.
-#### Not : TX-RX eşleşecek şekilde kablolama yapınız.
+Bağlantı yaparken pinout yapısını aşağıdaki şemaya göre gerçekleştirin. 
+**Not**: TX ve RX pinlerinin doğru eşleştirildiğinden emin olun.
+
 ![rd900x_pinout](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/pinout.png)
 
-### !!ÖNEMLİ NOT!! : ANTENLERİ TAKMADAN ENERJİ VERMEYİNİZ
+### ÖNEMLİ NOT: ANTENLERİ TAKMADAN ENERJİ VERMEYİNİZ
 
-RFD 900x, genellikle 4V-5,5V DC (Volt doğru akım) ve 0,5A-1A (Amper) ile beslenir. Bu, modülün doğru bir şekilde çalışabilmesi için gereken nominal gerilim ve akımdır. Bu gerilim ve akım değeri dışındaki besleme gerilimleri modülün performansını olumsuz etkileyebilir veya zarar verebilir. Ayrıca Antenler takılmadan enerji verilirse cihaz ısınarak hasar alma ihtimali yüksektir.
+RFD900X, 4-5.5V DC gerilim ve 0.5-1A akım ile beslenmelidir. Antenler takılmadan enerji verilmesi, cihazın zarar görmesine neden olabilir.
 
-# Point-to-Point
+---
+
+## Point-to-Point Bağlantısı
+
 ![p2p](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_connect.png)
 
-Point-to-Point bağlantı, iki cihazın (örneğin, iki RFD 900x modülü) doğrudan ve özel bir iletişim bağlantısı kurduğu bir kablosuz iletişim türüdür. Bu bağlantı türü, iki nokta arasında veri aktarımı gerektiren birçok uygulamada kullanılır.
+Point-to-point bağlantı, iki RFD900X modülü arasında doğrudan iletişim sağlayan bir kablosuz bağlantı türüdür. Bu bağlantı, iki nokta arasında güvenilir veri iletimi için kullanılır.
 
-Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. P2P olarak ayarlamak için cihazınızla uyumlu RFD X hardware başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
-### uygulama indirme linki  https://files.rfdesign.com.au/tools/
-### P2P FİRMWARE indirme linki https://files.rfdesign.com.au/firmware/
+### Gerekli Yazılımlar ve Firmware:
+RFD900X modülünü yapılandırmak için RFD Tools ve uygun firmware dosyaları gerekmektedir.
+- **Uygulama İndirme Linki**: [RFD Tools](https://files.rfdesign.com.au/tools/)
+- **P2P Firmware İndirme Linki**: [P2P Firmware](https://files.rfdesign.com.au/firmware/)
 
 ![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/p2p_param.png)
 
-RFD900 cihazını point to point kullanmak için RFDTools uygulmasını açıp doğru com portunu[1] ve baudrate[2] girdikten sonra connect butonuna[3] tıklayın. ardından upload firmware butonuna[4] tıklayarak yazılımı yükleyin. firmware yüklenince yeniden başlatıp bağlandıktan sonra load settings butonuna[5] basarak parametreleri çağırın. Cihazların biribiri ile iletişim kurması için bağlanacak cihazların NET ID[6] aynı olmak zorundadır. Anten modu[7] 1:TX 2:RX olacak şekilde ayarlanmalıdır. Ayrıca sisteminizin deseklediği en yüksek Baudrate[8] hızını ayarlayarak veri iletim hızı arttıralabir. Bağlantı kalitesini arttırmak için ise TX power[9] parametresini en yüksek değere ayarlayabilirsiniz. Tüm parametreleri ayarladıktan sonra save settings[10] butonuna basarak parametreleri kaydededbilirsiniz. iki cihazada aynı işlemleri uyguladıktan sonra iki cihazada güç verildiğinde cihazın yeşil ledi sabit ve kırmızı ledi hızlı yanıp sönmeye yanmaya başlayacaktır, bu durum cihazların bağlandığını ve veri iletimi gerçekleştirdiğini belirtmektedir.
+### Point-to-Point Bağlantı Ayarları:
+1. RFD Tools uygulamasını açın, doğru COM portunu ve baudrate'i seçin, ardından **Connect** butonuna tıklayın.
+2. **Upload Firmware** butonuna basarak gerekli P2P yazılımını yükleyin.
+3. **Load Settings** butonuna tıklayarak cihaz parametrelerini yükleyin.
+4. Her iki cihazın **NET ID**'sini aynı yapın ve anten modunu ayarlayın (1: TX, 2: RX).
+5. Sisteminizin desteklediği en yüksek baudrate değerini girin ve **TX Power**'ı maksimum seviyeye ayarlayın.
+6. Ayarlar tamamlandığında **Save Settings** butonuna basarak parametreleri kaydedin.
 
-### ekstra ayarlar
-max windows(ms) kaç milisaniye bir veri iletimi olacağını belirtir.değer azaltılması durumunda daha sık veri iletimi gerçekleşir. mavlink parametersi ardupilot veya px4 vb yazılımların iletişm protokülüdür. Bu tip otopilotlardan veri alabilmek için parametre açık(ON) olarak ayarlanmalıdır. AES ENCRYPTİON(GELİŞMİŞ ŞİFRELEME) cihazların yayınladığı mesajlara 126 veya 256 karakterli bir şifre uygulayarak şifreleme yapar. AES Key sahip olmayan cihazlar mesajı çözemez ve bağlantı kuramaz. Cihazaların daha güvenli çalışabilmesi için bu parametre ayarlanabilir. Bu ayarları yaparken iki cihaz birbirine bağlıysa copy required to remote butonuna basarsanız iki cihazında tüm parametrelerini aynı yapar ve değişikleri iki cihaz içinde yapmanıza gerek kalmaz.
+### Ek Ayarlar:
+- **Max Windows (ms)**: Veri iletim sıklığını belirler.
+- **MAVLink Parameters**: ArduPilot ve PX4 gibi otopilot sistemlerinin veri alışverişi için kullanılır.
+- **AES Encryption**: İletilen verilerin şifrelenmesi için kullanılır.
 
-# Multipoint Bağlantısı
+---
+
+## Multi-Point Bağlantısı
 
 ![MP](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/multipoint_connection.png)
 
-Multipoint bağlantısı, bir merkezi cihazın (MAİN) birden çok uzak düğümlerle (NODE) kablosuz iletişim kurduğu bir iletişim türüdür. Bu, birçok uygulamada kullanılan yaygın bir kablosuz iletişim konseptidir ve RFD 900x gibi cihazlarla uygulanabilir. Multipoint bağlantısının merkezi noktası, genellikle bir baz istasyonu olarak adlandırılır. Baz istasyonu cihazı, birden çok uzak cihazla iletişim kurmak ve onları kontrol etmek için kullanılır.
+Multipoint bağlantı, merkezi bir cihazın (MAIN) birden fazla düğüm (NODE) ile kablosuz iletişim kurduğu bir yapıdadır. Bu yapı, baz istasyonu cihazı olarak da bilinir ve birçok uzak düğümle veri iletimi sağlar.
 
-Yazılımları yüklemek için RFD Tools gereklidir. RFD 900x ve diğer benzer cihazlar için özelleştirilmiş bir yazılım araç setidir. Bu araç seti, bu tür cihazların yapılandırılması, izlenmesi ve verilerin işlenmesi için kullanılan çeşitli yazılım uygulamalarını içerir. MultiPoint olarak ayarlamak için cihazınızla uyumlu RFD X Multipoint SİK başlığı altındaki bin dosyasını indirmeniz gerekmektedir.
-### uygulama indirme linki  https://files.rfdesign.com.au/tools/
-### Mulltipoint yazılımı indirme linki https://files.rfdesign.com.au/firmware/
+### Gerekli Yazılımlar ve Firmware:
+Multipoint bağlantıyı ayarlamak için uygun firmware gereklidir:
+- **Uygulama İndirme Linki**: [RFD Tools](https://files.rfdesign.com.au/tools/)
+- **Multipoint Firmware İndirme Linki**: [Multipoint Firmware](https://files.rfdesign.com.au/firmware/)
 
 ![rfd_tools](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/mp.png)
 
-RFD900 cihazını point to point kullanmak için RFDTools uygulmasını açıp doğru com portunu[1] ve baudrate[2] girdikten sonra connect butonuna[3] tıklayın. ardından upload firmware butonuna[4] tıklayarak yazılımı yükleyin. firmware yüklenince yeniden başlatıp bağlandıktan sonra load settings butonuna[5] basarak parametreleri çağırın. Cihazların biribiri ile iletişim kurması için bağlanacak cihazların NET ID[6] aynı olmak zorundadır. Anten modu[7] 1:TX 2:RX olacak şekilde ayarlanmalıdır. Ayrıca sisteminizin deseklediği en yüksek Baudrate[8] hızını ayarlayarak veri iletim hızı arttıralabir. Bağlantı kalitesini arttırmak için ise TX power[9] parametresini en yüksek değere ayarlayabilirsiniz. Her cihaza bir Düğüm numarası(NODE ID)[11] verilmelidir. Ana düğüme 1 değerini vermek zorunludur. diğer düğümlerin numaraları rastgele verilebilir. HEDEF KİMLİK(DEST ID)[12] cihazın hangi düğümlere veri ileteceğini ve alacağını belirtir. Ana düğümün tüm düğümlere bağlanabilmesi için 255 değeri ayarlanmalıdır. Özel bir düğüme bağlanmak için ise bağlanılacak düğümün numarası verilebilir. Diğer düğümler ise Ana düğüme bağlanabilmesi için 1 olarak ayarlanmalıdır. AĞ Sayısı(NET COUNT)[13] bir sistemdeki Ana Düğüm sayısını belirtir. Bu değer sistemde 1 istasyon varsa 1 olarak ayarlanmalıdır. Cihazların ne tür parametre gönderdiğine bağlı olarak RX Frame[14] ayarlanmalıdır. Tüm parametreleri ayarladıktan sonra save settings[10] butonuna basarak parametreleri kaydededbilirsiniz. Sistemin Çalışması için Ana düğüm için terminal kısmından ekstra parametreler ayarlanmalıdır. 
+### Multi-Point Bağlantı Ayarları:
+1. RFD Tools'u açın, COM portu ve baudrate'i seçerek **Connect** butonuna basın.
+2. **Upload Firmware** ile uygun yazılımı yükleyin ve cihazı yeniden başlatın.
+3. **Load Settings** butonu ile parametreleri yükleyin.
+4. **NET ID** aynı olacak şekilde tüm düğümleri ayarlayın ve her düğüme bir **Node ID** verin (Ana düğüm için Node ID=1).
+5. **DEST ID**: Ana düğüm için 255 olarak ayarlayın (tüm düğümlerle iletişim için).
+6. **NET COUNT**: Sistemde kaç ana düğüm olduğunu belirtir. Tek baz istasyonu varsa bu değer 1 olmalıdır.
+
+### Terminal Üzerinden Ekstra Ayarlar:
+Terminale **+++** yazarak bağlandığınızı kontrol edin, ardından:
+- **AT&M0=0,z** komutunu kullanın. Z yerine sistemdeki düğüm sayısının bir fazlasını yazın.
+- Ayarları kaydetmek için **AT&W** komutunu çalıştırın.
+- **ATZ** komutu ile cihazı yeniden başlatın.
 
 ![rfd_term](https://github.com/Numan-Aktas/RFD900_Kullan-m_k-lavuzu/blob/main/images/terminal_code.png)
-terminalde işlem yapılıp yapılamadığını kontrol etmek için +++ yazılır ve terminal +++ döndürmesi gerekir. AT&M0= 0, z kodu yazılır z yerine sistemdeki düğüm sayısının bir fazlası yazılır. işlemi yazdırmak için AT&W komutu çalıştırılır ve OK yazması beklenir. ATZ komutu ilede reboot atıp işlem tamamlanır. herhangi bir adım sırasında terminal yanıt döndürmezse kodu tekrar gönderin. Cihazalara güç verildiğinde cihazların yeşil ledi sabit ve kırmızı ledi hızlı yanıp sönmeye yanmaya başlayacaktır, bu durum cihazların bağlandığını ve veri iletimi gerçekleştirdiğini belirtmektedir.
 
-#### daha fazlası için https://files.rfdesign.com.au adresini ziyaret edebilirsiniz.
+Ayarlar doğru şekilde yapıldığında, cihazların yeşil ledi sabit yanacak ve kırmızı ledi hızlı yanıp sönmeye başlayacaktır. Bu, cihazların başarılı şekilde bağlandığını ve veri iletimi yaptığını gösterir.
+
+---
+
+## Daha Fazlası İçin
+Daha fazla bilgi ve indirmeler için [RFD Design](https://files.rfdesign.com.au) sayfasını ziyaret edebilirsiniz.
